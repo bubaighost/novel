@@ -1,0 +1,32 @@
+package com.entity.view;
+
+import com.entity.DiscussxiaoshuoxinxiEntity;
+
+import com.baomidou.mybatisplus.annotations.TableName;
+import org.apache.commons.beanutils.BeanUtils;
+import java.lang.reflect.InvocationTargetException;
+
+import java.io.Serializable;
+ 
+
+/**
+ * 小说信息评论表
+ *
+ */
+@TableName("discussxiaoshuoxinxi")
+public class DiscussxiaoshuoxinxiView  extends DiscussxiaoshuoxinxiEntity implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	public DiscussxiaoshuoxinxiView(){
+	}
+ 
+ 	public DiscussxiaoshuoxinxiView(DiscussxiaoshuoxinxiEntity discussxiaoshuoxinxiEntity){
+ 	try {
+			BeanUtils.copyProperties(this, discussxiaoshuoxinxiEntity);
+		} catch (IllegalAccessException | InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+ 		
+	}
+}
